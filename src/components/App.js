@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import '../style/style.scss';
+import Key from './Key';
+import Interface from './Interface';
 
 export default class App extends Component {
 
@@ -9,7 +12,11 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <h1>Hello</h1>
+                <h1>Calculator</h1>
+                <br/>
+                <Interface 
+                    value={123456789}
+                />
             </div>
         )
     }

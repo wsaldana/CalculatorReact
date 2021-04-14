@@ -1,0 +1,37 @@
+@import "~bootstrap/scss/bootstrap";
+
+$defaultFont: Tahoma;
+
+body {
+  background: #353535;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  line-height: 1;
+  font-family: "Patrick Hand", sans-serif;
+}
+
+h1 {
+  color: white;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #1d1d1d;
+  padding: 10px;
+}
+
+button {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+}
