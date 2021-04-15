@@ -54,6 +54,14 @@ export default class App extends Component {
             this.setState({stack:_stack, number:[], display:_stack[0]})
             console.log(this.state.stack)
         }
+        else if(value === "+/-"){
+            if(_number.length > 0){
+                _stack.push(+(_number.join("")))
+            }
+            var n = this.calc(_stack.pop(), "x", -1);
+            _stack.push(n);
+            this.setState({stack:_stack, number:[], display: _stack[0]})
+        }
     }
 
     calc(n2, op, n1){
