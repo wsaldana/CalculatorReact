@@ -9,7 +9,8 @@ export default class App extends Component {
         super(props);
         this.state = {
             stack: [],
-            number: []
+            number: [],
+            display: 0
         }
         this.pressedButton=this.pressedButton.bind(this);
         //this.calc=this.calc.bind(this);
@@ -24,7 +25,7 @@ export default class App extends Component {
         if(numeric.includes(value)){
             if(_number.length < 9 && !(value === "." && _number.includes("."))){
                 _number.push(value)
-                this.setState({stack:_stack, number:_number})
+                this.setState({stack:_stack, number:_number, display:_number.join("")})
             }
         }
         else if(symbols.includes(value) && _number !== ""){
@@ -40,7 +41,7 @@ export default class App extends Component {
                 _stack.push(n);
             }
             _stack.push(value)
-            this.setState({stack:_stack, number:[]})
+            this.setState({stack:_stack, number:[], display: _stack[0]})
             console.log(this.state.stack)
         }
         else if(value === "="){
@@ -50,7 +51,7 @@ export default class App extends Component {
             console.log("params ",n2," ",op," ",n1)
             var n = this.calc(n2, op, n1);
             _stack.push(n);
-            this.setState({stack:_stack, number:[]})
+            this.setState({stack:_stack, number:[], display:_stack[0]})
             console.log(this.state.stack)
         }
     }
@@ -83,7 +84,7 @@ export default class App extends Component {
                 <h1>Calculator</h1>
                 <br/>
                 <Interface 
-                    value = {123456789}
+                    value = {this.state.display}
                     pressedButton = {this.pressedButton}
                 />
             </div>
