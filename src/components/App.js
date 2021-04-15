@@ -62,6 +62,9 @@ export default class App extends Component {
             _stack.push(n);
             this.setState({stack:_stack, number:[], display: _stack[0]})
         }
+        else if(value === "ce"){
+            this.setState({number:[], display:" "})
+        }
     }
 
     calc(n2, op, n1){
