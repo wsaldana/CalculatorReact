@@ -16,7 +16,7 @@ export default class Interface extends Component {
 
                 <div className="keyboard">
                     {
-                        btns.map((btn) => <Key value={btn}/>)
+                        btns.map((btn) => <Key value={btn} pressedButton={this.props.pressedButton}/>)
                     }
                 </div>
                 

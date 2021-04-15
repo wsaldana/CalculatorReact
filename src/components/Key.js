@@ -8,7 +8,7 @@ export default class Key extends Component {
 
     render() {
         return (
-            <button className="key">
+            <button className="key" onClick={()=>{this.props.pressedButton(this.props.value)}}>
                 <p>{this.props.value}</p>
             </button>
         )
