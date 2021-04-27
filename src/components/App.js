@@ -3,7 +3,6 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
-import '../style/style.scss';
 import Interface from './Interface';
 
 export default class App extends Component {
